@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1632207879 source:c:\users\danie\documents\cs\connect 4\main.cpp
+	<iostream>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	"Board.h"
+
+1632200337 source:c:\users\danie\documents\cs\connect 4\ai.cpp
+
+1632208097 source:c:\users\danie\documents\cs\connect 4\board.cpp
+	<iostream>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Board.h"
+
+1632207471 c:\users\danie\documents\cs\connect 4\board.h
+

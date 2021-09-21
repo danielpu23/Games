@@ -86,11 +86,78 @@ bool checkWin(int row, int col, char c){    // function to check if player has w
             break;
         }
     }
+
     connectedDiscs = 0;
+    int i = row;                // i represents row, j col
+    int j = col;
+    while(i >= 0 && j >=0  )    // check how many connected discs are in the top down diagonal (above and left to current disc)
+    {
+        if(board[i][j] == c){
+            connectedDiscs++;
+            if(connectedDiscs >= 4){
+                return true;
+            }
+            i--;
+            j--;
+        }
+        else{
+            break;
+        }
+    }
 
-    //int i, j =0; // i represents row, j col
-    //while(i  )    // check how many connected discs are in the top down diagonal (above and left to current disc)
+     connectedDiscs--;    // remove double count most recently dropped disc
+     i = row;
+     j = col;
+     while(i < numRows && j < numCols  )    // check how many connected discs are in the top down diagonal (below and right to current disc)
+        {
+        if(board[i][j] == c){
+            connectedDiscs++;
+              if(connectedDiscs >= 4){
+                return true;
+            }
+            i++;
+            j++;
+        }
+        else{
+            break;
+        }
+    }
 
+    connectedDiscs = 0;
+     i = row;
+     j = col;
+    while(i < numRows && j >=0  )    // check how many connected discs are in the bottom up diagonal (below and left to current disc)
+    {
+        if(board[i][j] == c){
+            connectedDiscs++;
+             if(connectedDiscs >= 4){
+                return true;
+            }
+            i++;
+            j--;
+        }
+        else{
+            break;
+        }
+    }
+
+     connectedDiscs--;
+     i = row;
+     j = col;
+    while(i >= 0 && j < numCols )    // check how many connected discs are in the bottom up diagonal (above and right to current disc)
+    {
+        if(board[i][j] == c){
+            connectedDiscs++;
+            if(connectedDiscs >= 4){
+                return true;
+            }
+            i--;
+            j++;
+        }
+        else{
+            break;
+        }
+    }
     return false;
 }
 
